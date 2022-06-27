@@ -1,3 +1,3 @@
 # 2022_Exercises
 
-Just training programming with Python 3.
+Just solving some LeetCode programming exercises with Python 3.
