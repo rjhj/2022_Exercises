@@ -38,9 +38,10 @@ class Solution:
         for n in nums:
             i = kierros
             for i in range(kierros, len(nums)):
-                if n + nums[kierros] == target:
-                    return [i-1, kierros]
-                #print("Kierros: " + str(kierros) + " n: " + str(n) + " i: " + str(i))
+                #print("Kierros: " + str(kierros) + " n: " + str(n) + " i: " + str(i) + " kierros -1, i: " + str(kierros-1) + ", " + str(i))
+                #print (n + nums[i])
+                if n + nums[i] == target:
+                    return [kierros-1, i]
             kierros += 1
         return []
     
@@ -55,9 +56,9 @@ def tarkistaja(knownResult, twoSumResult):
 
 solver = Solution()
 
-problems = [[2,7,11,15], [3, 2, 4], [3, 3], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]]
-targets = [9, 6, 6, 21]
-knownresults = [[0, 1], [1, 2], [0, 1], [9, 10]]
+problems = [[2,7,11,15], [3, 2, 4], [3, 3], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [3, 2, 3]]
+targets = [9, 6, 6, 19, 6]
+knownresults = [[0, 1], [1, 2], [0, 1], [8, 9], [0, 2]]
 
 i = 0
 while i < len(targets):
