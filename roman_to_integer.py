@@ -34,5 +34,21 @@
 
 class Solution:
     def romanToInt(self, s: str) -> int:
-        pass
+        return 3
 
+solver = Solution()
+
+
+#Test data 
+romanNumbers = ["III", "LVIII", "MCMXCIV"]
+expectedResults = [3, 58, 1994]
+
+#Tester
+i = 0
+while i < len(romanNumbers):
+    result = solver.romanToInt(romanNumbers[i])
+    if result == expectedResults[i]:
+        print("Correct!")
+    else:
+        print("Incorrect!")
+    i += 1
