@@ -34,7 +34,7 @@
 
 class Solution:
 
-    def singleRomanToInt(romanNumber):
+    def singleRomanToInt(self, romanNumber):
         romanDictionary = {
             "I" : 1,
             "V" : 5,
@@ -52,6 +52,8 @@ class Solution:
         sum = 0
         i = len(s) - 1
         while i >= 0:
+            n = self.singleRomanToInt(s[i])
+            print(n)
             if i > 0:
                 pass
             i -= 1
