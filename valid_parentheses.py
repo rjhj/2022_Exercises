@@ -68,3 +68,8 @@ while (i < len(testStrings)):
     result = solver.isValid(testStrings[i])
     print("Expected result: " + str(expectedResults[i]) + " Result: " + str(result) + " Was the result correct? " + str(expectedResults[i] == result))
     i += 1
+
+
+# Success
+# Runtime: 45 ms, faster than 55.97% of Python3 online submissions for Valid Parentheses.
+# Memory Usage: 14 MB, less than 23.64% of Python3 online submissions for Valid Parentheses.
