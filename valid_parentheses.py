@@ -18,15 +18,45 @@
 # Output: false
 
 class Solution:
+
+    def valids(self, opened):
+        opposites = {
+           "(" : ")",
+           "[" : "]",
+           "{" : "}"
+        }
+        openBrackets = ["(", "[", "{"]
+        correctClosing = []
+        if opened:
+            correctClosing = opposites[opened[-1]]
+        return openBrackets + correctClosing
+
+
     def isValid(self, s: str) -> bool:
+
+        openBrackets = ["(", "[", "{"]
+        lengthOfTheString = len(s)
+        if lengthOfTheString % 2 == 1:
+            return False
+        i = 0
+        opened = []
+        allowed = openBrackets
+        while i < lengthOfTheString:
+            validList = self.valids(opened)
+            if s[i] not in validList:
+                print(s[i])
+                return False
+            else:
+                pass
+            i += 1
         return True
         
 
 solver = Solution()
 
 # Test data
-testStrings = ["()", "()[]{}", "(]", "{{{{", ")", "((([([])]))"]
-expectedResults = [True, True, False, False, False, True]
+testStrings = ["()", "()[]{}", "(]", "{{{{", ")", "((([([])]))", "([)"]
+expectedResults = [True, True, False, False, False, True, False]
 
 i = 0
 while (i < len(testStrings)):
