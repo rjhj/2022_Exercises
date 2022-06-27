@@ -33,8 +33,29 @@
 # Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 
 class Solution:
+
+    def singleRomanToInt(romanNumber):
+        romanDictionary = {
+            "I" : 1,
+            "V" : 5,
+            "X" : 10,
+            "L" : 50,
+            "C" : 100,
+            "M" : 1000
+        }
+
+        return romanDictionary[romanNumber]
+
+
+
     def romanToInt(self, s: str) -> int:
-        return 3
+        sum = 0
+        i = len(s) - 1
+        while i >= 0:
+            if i > 0:
+                pass
+            i -= 1
+        return sum
 
 solver = Solution()
 
