@@ -25,37 +25,42 @@ class Solution:
            "[" : "]",
            "{" : "}"
         }
-        openBrackets = ["(", "[", "{"]
         correctClosing = []
         if opened:
             correctClosing = opposites[opened[-1]]
-        return openBrackets + correctClosing
+        return openBrackets + list(correctClosing)
 
 
     def isValid(self, s: str) -> bool:
-
-        openBrackets = ["(", "[", "{"]
         lengthOfTheString = len(s)
         if lengthOfTheString % 2 == 1:
             return False
         i = 0
         opened = []
-        allowed = openBrackets
         while i < lengthOfTheString:
             validList = self.valids(opened)
             if s[i] not in validList:
-                print(s[i])
                 return False
             else:
-                pass
+                # Closing bracket was found so previous open bracket can be removed 
+                if s[i] not in openBrackets:
+                    opened.pop()
+                else:
+                    opened.append(s[i])
             i += 1
-        return True
-        
+        # All opened parentheses must be closed, so list must be empty
+        if not opened:
+            return True
+        else:
+            return False
+
+
+openBrackets = ["(", "[", "{"]
 
 solver = Solution()
 
 # Test data
-testStrings = ["()", "()[]{}", "(]", "{{{{", ")", "((([([])]))", "([)"]
+testStrings = ["()", "()[]{}", "(]", "{{{{", ")", "((([([])])))", "([)"]
 expectedResults = [True, True, False, False, False, True, False]
 
 i = 0
