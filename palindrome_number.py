@@ -25,5 +25,22 @@ Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
 
 class Solution:
     def isPalindrome(self, x: int) -> bool:
-        pass
+        return True
+
+
+solver = Solution()
+
+# Testing data
+inputs = [121, -121, 10]
+expectedResults = [True, False, False]
+
+#Tests
+i = 0
+while i < len(inputs):
+    result = solver.isPalindrome(inputs[i])
+    if result == expectedResults[i]:
+        print("Correct!")
+    else:
+        print("Incorrect!")
+    i += 1
 
