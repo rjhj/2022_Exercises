@@ -60,7 +60,7 @@ class Solution:
                 # current number is smaller than next
                 if currentNumber < nextNumber:
                     sum += nextNumber - currentNumber
-                    # no need to process the next number, so decrease i an additional time
+                    # no need to process the next number, so increase i an additional time
                     i += 1
                 # current number is greater than equal to next, just add the number
                 else:
