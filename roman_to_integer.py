@@ -50,13 +50,26 @@ class Solution:
 
     def romanToInt(self, s: str) -> int:
         sum = 0
-        i = len(s) - 1
-        while i >= 0:
-            n = self.singleRomanToInt(s[i])
-            print(n)
-            if i > 0:
-                pass
-            i -= 1
+        i = 0
+        length = len(s)
+        while i <= length - 1:
+            currentNumber = self.singleRomanToInt(s[i])
+            # at least two elements left so we can compare
+            if i <= length -2:
+                nextNumber = self.singleRomanToInt(s[i+1])
+                # current number is smaller than next
+                if currentNumber < nextNumber:
+                    sum += nextNumber - currentNumber
+                    # no need to process the next number, so decrease i an additional time
+                    i += 1
+                # current number is greater than equal to next, just add the number
+                else:
+                    sum += currentNumber
+            # last index, so add the last number
+            else:
+                sum += currentNumber
+            i += 1
+            #print(sum)
         return sum
 
 solver = Solution()
@@ -71,7 +84,7 @@ i = 0
 while i < len(romanNumbers):
     result = solver.romanToInt(romanNumbers[i])
     if result == expectedResults[i]:
-        print("Correct!")
+        print("Correct! Result: " + str(result) + " ExpectedResult: " + str(expectedResults[i]))
     else:
-        print("Incorrect!")
+        print("Incorrect! Result: " + str(result) + " ExpectedResult: " + str(expectedResults[i]))
     i += 1
