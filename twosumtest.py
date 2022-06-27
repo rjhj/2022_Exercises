@@ -67,3 +67,8 @@ while i < len(targets):
     i += 1
 
 
+
+# Success
+# Details 
+# Runtime: 4974 ms, faster than 19.48% of Python3 online submissions for Two Sum.
+# Memory Usage: 14.8 MB, less than 99.44% of Python3 online submissions for Two Sum.
