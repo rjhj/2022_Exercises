@@ -23,16 +23,23 @@ class Solution:
                 shortestLength = len(strs[i])
                 shortestWordIndex = i
             i += 1
-        return shortestWordIndex
+        return shortestWordIndex, shortestLength
           
     def longestCommonPrefix(self, strs: list[str]) -> str:
-
-        print(self.findShortestWord(strs))
-        for s in strs:
-            pass
-
-            
-        return ""
+        shortestWordIndex, shortestLength = self.findShortestWord(strs)
+        shortestWord = strs[shortestWordIndex]
+        strs.pop(shortestWordIndex)
+        prefixLength = 0
+        indexOfLetters = 0
+        numberOfWords = len(strs)
+        while indexOfLetters < shortestLength:
+            indexOfWords = 0
+            while indexOfWords < numberOfWords:
+                 if shortestWord[indexOfLetters] != strs[indexOfWords][indexOfLetters]:
+                    return shortestWord[0:indexOfLetters]
+                 indexOfWords += 1
+            indexOfLetters += 1
+        return shortestWord[0:indexOfLetters]
 
 
 
@@ -40,8 +47,8 @@ class Solution:
 solver = Solution()
 
 # Test data
-testList = [["flower","flow","flight"], ["dog","racecar","car"], ["milk","milk","m"]]
-expectedResult = ["fl", "", "m"]
+testList = [["flower","flow","flight"], ["dog","racecar","car"], ["milk","milk","m"], ["12345678","123456","1234567"]]
+expectedResult = ["fl", "", "m", "123456"]
 
 i = 0
 lenOfTestList = len(testList)
