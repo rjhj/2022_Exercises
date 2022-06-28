@@ -20,20 +20,52 @@
 # Constraints:
 # 1 <= n <= 45
 
+
+from logging import StringTemplateStyle
+
+
 class Solution:
+    #I've decided to make this more challenging and print out all the possible variations.
+
+    def node(self, n, str, level, strList):
+        m = n
+        str2 = str
+        if n > 1:
+            str += "2"
+            n -= 2
+            self.node(n, str, level, strList)
+        if m > 0:
+            str2 += "1"
+            m -= 1
+            self.node(m, str2, level, strList)
+        if n == 0 and m != 1:
+            strList.append(str)
+
+
+
     def climbStairs(self, n: int) -> int:
-        return 3
+        str = ""
+        strList = []
+        solver.node(n, str, 0, strList)
+        print(strList)
+
+        return strList
 
 
 solver = Solution()
 
 #Test data
 testData = {
+    1 : 1,
     2 : 2,
     3 : 3,
-    1 : 1
+    4 : 5,
+    5 : 8,
+    6 : 13
     }
 
 #Tests
 for test, expected in testData.items():
-    print(f"Test value: {test}, expected value: {expected}, solution: {solver.climbStairs(test)}")
+    result = (solver.climbStairs(test))
+    print(f"Test value: {test}, expected value: {expected}, solver gave: {len(result)}")
+    print(f"All the possible variations: {result}")
