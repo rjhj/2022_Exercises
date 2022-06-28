@@ -63,10 +63,12 @@ solver = Solution()
 testStrings = ["()", "()[]{}", "(]", "{{{{", ")", "((([([])])))", "([)"]
 expectedResults = [True, True, False, False, False, True, False]
 
+
+
 i = 0
 while (i < len(testStrings)):
     result = solver.isValid(testStrings[i])
-    print("Expected result: " + str(expectedResults[i]) + " Result: " + str(result) + " Was the result correct? " + str(expectedResults[i] == result))
+    print(f'Expected result: {expectedResults[i]}, Result: {result}')
     i += 1
 
 
