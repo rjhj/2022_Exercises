@@ -42,7 +42,7 @@ class Solution:
             if s[i] not in validList:
                 return False
             else:
-                # Closing bracket was found so previous open bracket can be removed 
+                # Closing parentheses was found so previous open one can be removed 
                 if s[i] not in openBrackets:
                     opened.pop()
                 else:
