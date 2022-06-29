@@ -101,3 +101,8 @@ testData = {
 for test, expected in testData.items():
     result = (solver.climbStairs(test))
     print(f"Test value: {test}, expected value: {expected}, solver gave: {result}")
+
+
+# Success 
+# Runtime: 36 ms, faster than 78.48% of Python3 online submissions for Climbing Stairs.
+# Memory Usage: 13.9 MB, less than 56.80% of Python3 online submissions for Climbing Stairs.
