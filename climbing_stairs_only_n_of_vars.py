@@ -20,21 +20,23 @@
 # Constraints:
 # 1 <= n <= 45
 
+
 ##############################################
 ##                MY SOLUTION               ## 
 ##############################################
-# To solved this I figured out the pattern in results:
-# 2 total 2:                1 + 1
-# 3 total 3:		        2 + 1
-# 4 total 5:           1  + 3 + 1
-# 5 total 8:           3  + 4 + 1
-# 6 total 13:     1  + 6  + 5 + 1
-# 7 total 21:     4  + 10 + 6 + 1
-# 8 total 34: 1 + 10 + 15 + 7 + 1
+# To solve this I figured out the following pattern:
+# input: total:
+# 2          2               1 + 1
+# 3          3               2 + 1
+# 4          5          1  + 3 + 1
+# 5          8          3  + 4 + 1
+# 6         13     1  + 6  + 5 + 1
+# 7         21     4  + 10 + 6 + 1
+# 8         34 1 + 10 + 15 + 7 + 1
 #
-# Combination of these permutations is the answer.
+# So the sum of the set of permutations gives the answer.
 #
-# For each permutation using n! / n2! * n1!
+# Formula for each set of permutations: n! / n2! * n1!
 # where n = total number of elements
 # n2 = number of twos, n1 = number of ones
 # For example,
@@ -43,7 +45,7 @@
 # n2          4    3    2   1   0
 # n1          0    2    4   6   8
 #
-# To get 15 we calculate:
+# To get 15 we could calculate:
 # math.factorial(6)/(math.factorial(2)*math.factorial(4))
 # although I won't import math here.
 
