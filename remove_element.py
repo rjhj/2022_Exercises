@@ -77,3 +77,8 @@ for i in range(len(testLists)):
     print(f"Testlist: {testLists[i]}, testvalue: {testValues[i]}", end=" ")
     result = solver.removeElement(testLists[i], testValues[i])
     print(f"Expected result: {expectedOutputs[i]}, result: {result}")
+
+
+# Success
+# Runtime: 53 ms, faster than 44.82% of Python3 online submissions for Remove Element.
+# Memory Usage: 13.8 MB, less than 62.47% of Python3 online submissions for Remove Element.
