@@ -39,3 +39,7 @@ expectedResults = [2, -1, 0]
 for i in range(len(haystacks)):
     result = solver.strStr(haystacks[i], needles[i])
     print(f"Expected: {expectedResults[i]}, result: {result}")
+
+
+# Runtime: 29 ms, faster than 95.64% of Python3 online submissions for Implement strStr().
+# Memory Usage: 13.9 MB, less than 63.36% of Python3 online submissions for Implement strStr().
