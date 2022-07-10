@@ -30,10 +30,8 @@ class Solution:
                 result += 2**(length - 1 - i)
         return result
 
-
-
-
-        
+    def addBinary2(self, a: str, b:str) -> str:
+        return bin(int(a, 2) + int(b, 2))[2:]
 
 #Testdata
 a_list = ["11", "1010", "0"]
@@ -44,5 +42,5 @@ solution = Solution()
 
 #Tests
 for i, v in enumerate(expected):
-    result  = solution.addBinary(a_list[i], b_list[i])
+    result  = solution.addBinary2(a_list[i], b_list[i])
     print(f"Expected: {v} Result: {result}")
