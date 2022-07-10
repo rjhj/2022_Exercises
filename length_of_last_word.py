@@ -32,8 +32,7 @@ class Solution:
                 last -= 1
             else:
                 break
-        print(s[0:last+1])
-        first = last 
+        first = last
         while first > 0:
             if not s[first-1].isspace():
                 first -= 1
@@ -48,6 +47,6 @@ testList = ["a", "aa", "Hello World", "   fly me   to   the moon  ", "luffy is s
 expectedResults = [1, 2, 5, 4, 6]
 
 #Tests
-for i in range(len(testList)):
-    result = solution.lengthOfLastWord(testList[i])
+for i, test in enumerate(testList):
+    result = solution.lengthOfLastWord(test)
     print(f"Expected: {expectedResults[i]} Result: {result}")
