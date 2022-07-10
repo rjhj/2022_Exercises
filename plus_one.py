@@ -45,10 +45,6 @@ class Solution:
                     digits.insert(0, 1)
                     return digits
 
-    def plusOne2(self, digits: list[int]) -> list[int]:
-        return list(str(int("".join(map(str, digits))) + 1))       
-
-
 def main():
     # Testdata
     inputs = [[1,2,3],[4,3,2,1],[9],[1,1,9,9]]
