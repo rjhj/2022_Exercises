@@ -12,7 +12,6 @@
 # Input: p = [1,2], q = [1,null,2]
 # Output: false
 
-from sre_constants import SUCCESS
 from typing import Optional
 
 class TreeNode:
