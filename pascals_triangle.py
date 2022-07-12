@@ -15,7 +15,6 @@
 # Constraints:
 # 1 <= numRows <= 30
 
-
 class Solution:
     def generate(self, numRows: int) -> list[list[int]]:
         l = [[1], [1, 1]]
@@ -31,5 +30,5 @@ class Solution:
 
 solution = Solution()
 
-result = solution.generate(7)
+result = solution.generate(10)
 print(result)
