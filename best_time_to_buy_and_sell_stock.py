@@ -48,8 +48,7 @@ class Solution:
         smallest = prices[0]
         for e in prices:
             smallest = min(e, smallest)
-            temp_profit = e - smallest
-            profit = max(profit, temp_profit)
+            profit = max(profit, e - smallest)
         return profit
 
 
